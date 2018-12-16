@@ -1,8 +1,9 @@
 {
   "name": "@webileapps/react-native-piechart",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "React Native Interactive Pie Chart.",
   "main": "index.js",
+  
   "scripts": {
     "plugin.prepare": "cd ../demo-expo && yarn remove @webileapps/react-native-piechart && yarn add ../src",
     "expo": "cd ../demo-expo && yarn start"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
 import Chart from './Chart';
 import Circle from'./Circle';
 
@@ -34,13 +34,14 @@ export default class HomeLogo extends React.Component {
   }
 
   render() {
-    const {colors = [], children, selectedIndex = 0} = this.props;
+    const {colors = [], children, selectedIndex = 0, centerPiece = <Text>Logo</Text>} = this.props;
     const { width = 300, height = 300 } = this.state;
     const side = Math.min(360, width, height);
     return (<View style={{...this.props.style, flexDirection: 'row'}} activeOpacity={1}>
-    <View style={{flex: 1, aspectRatio: 1}} onLayout={this.handleLayout}>
+    <View style={{flex: 1, aspectRatio: 1, alignItems : 'center', justifyContent: 'center'}} onLayout={this.handleLayout}>
       <Chart style={styles.chart} colors={colors} size={side} selectedIndex={selectedIndex}></Chart>
       <Circle style={{...styles.chart}} children={children} selectedIndex={selectedIndex}/>
+      <View style={{}}>{centerPiece}</View>
     </View>
     <TouchableOpacity style={styles.chart} onPress={this.handleTouchEvt}/>
     </View>)
@@ -48,10 +49,16 @@ export default class HomeLogo extends React.Component {
 }
 
 const styles = StyleSheet.create({ chart : {
-  // alignSelf : "center", 
-  position : "absolute", 
-  top: 0, 
-  left: 0, 
-  width : '100%', 
-  height: '100%'
-}});
+    // alignSelf : "center", 
+    position : "absolute", 
+    top: 0, 
+    left: 0, 
+    width : '100%', 
+    height: '100%'
+  }, centerPiece : {
+    backgroundColor : 'green', 
+    height : 70, 
+    width : 70,
+    alignItems : 'center', 
+    justifyContent: 'center'
+  }});

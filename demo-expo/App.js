@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 // import BezierPlayground from "./BezierPlayground";
-import HomeLogo from "@webileapps/react-native-piechart"
-
+import InteractivePie from "@webileapps/react-native-piechart"
+const CenterIcon = require("./images/components_images_ge_logo.png");
 const SLICES = [
   {
     color : "#afe5d2",
@@ -54,14 +54,19 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Open up App.js to start working on your app!</Text>
-        <HomeLogo colors={SLICES.map(s => s.color)} selectedIndex={this.state.selectedIndex} onSelectionChange={selectedIndex => this.setState({selectedIndex})}>
+        <InteractivePie 
+          colors={SLICES.map(s => s.color)} 
+          selectedIndex={this.state.selectedIndex} 
+          onSelectionChange={selectedIndex => this.setState({selectedIndex})}
+          centerPiece={<Image source={CenterIcon} style={{height : 70, width: 70}} resizeMode="contain"/>}
+        >
           {SLICES.map((slice, index) => <View key={index} style={{...styles.child}}>
             <IconBadge count={slice.badge}>
               <Image style={{height : 30, width : 30}} resizeMode="contain" source={slice.icon}></Image>
             </IconBadge>
             <Text>{slice.title}</Text>
           </View>)}
-        </HomeLogo>
+        </InteractivePie>
         {/* <BezierPlayground/> */}
       </View>
     );
