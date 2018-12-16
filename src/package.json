@@ -1,0 +1,17 @@
+{
+  "name": "@webileapps/react-native-piechart",
+  "version": "0.1.0",
+  "description": "React Native Interactive Pie Chart.",
+  "main": "index.js",
+  "scripts": {
+    "plugin.prepare": "cd ../demo-expo && yarn remove @webileapps/react-native-piechart && yarn add ../src",
+    "expo": "cd ../demo-expo && yarn start"
+  },
+  "keywords": [],
+  "author": "rajivnarayana@gmail.com",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
