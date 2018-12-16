@@ -601,7 +601,7 @@
   resolved "http://registry.npmjs.org/@types/websql/-/websql-0.0.27.tgz#621a666a7f02018e7cbb4abab956a25736c27d71"
 
 "@webileapps/react-native-piechart@../src":
-  version "0.1.0"
+  version "0.3.0"
 
 abbrev@1:
   version "1.1.1"

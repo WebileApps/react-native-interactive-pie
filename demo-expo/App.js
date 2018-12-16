@@ -58,7 +58,7 @@ export default class App extends React.Component {
           colors={SLICES.map(s => s.color)} 
           selectedIndex={this.state.selectedIndex} 
           onSelectionChange={selectedIndex => this.setState({selectedIndex})}
-          centerPiece={<Image source={CenterIcon} style={{height : 70, width: 70}} resizeMode="contain"/>}
+          centerPiece={<Image source={CenterIcon} style={{height : 70, width: 70, borderRadius: 35}} resizeMode="contain"/>}
         >
           {SLICES.map((slice, index) => <View key={index} style={{...styles.child}}>
             <IconBadge count={slice.badge}>
