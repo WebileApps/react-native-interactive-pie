@@ -40,7 +40,7 @@ export default class HomeLogo extends React.Component {
     return (<View style={{...this.props.style, flexDirection: 'row'}} activeOpacity={1}>
     <View style={{flex: 1, aspectRatio: 1, alignItems : 'center', justifyContent: 'center'}} onLayout={this.handleLayout}>
       <Chart style={styles.chart} colors={colors} size={side} selectedIndex={selectedIndex}></Chart>
-      <Circle style={{...styles.chart}} children={children} selectedIndex={selectedIndex}/>
+      <Circle style={styles.chart} children={children} selectedIndex={selectedIndex}/>
       <View style={{}}>{centerPiece}</View>
     </View>
     <TouchableOpacity style={styles.chart} onPress={this.handleTouchEvt}/>

@@ -60,7 +60,7 @@ export default class App extends React.Component {
           onSelectionChange={selectedIndex => this.setState({selectedIndex})}
           centerPiece={<Image source={CenterIcon} style={{height : 70, width: 70, borderRadius: 35}} resizeMode="contain"/>}
         >
-          {SLICES.map((slice, index) => <View key={index} style={{...styles.child}}>
+          {SLICES.map((slice, index) => <View key={index} style={styles.child}>
             <IconBadge count={slice.badge}>
               <Image style={{height : 30, width : 30}} resizeMode="contain" source={slice.icon}></Image>
             </IconBadge>
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     borderColor : 'white',
     alignItems: 'center',
     justifyContent: 'center',
-    color : '#FFFFFF',
     backgroundColor: '#ff374f'
   },
   container: {

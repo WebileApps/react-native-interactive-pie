@@ -35,14 +35,14 @@ export default class Circle extends React.Component {
     // console.log(centerX, centerY, radius);
     // const width = 300;
     const children = this.props.children.map((child, index, arr) => 
-         ({...child, props : {...child.props, onLayout: (event) => this.handleChildLayout(index, event), style : {...child.props.style , 
+         ({...child, props : {...child.props, onLayout: (event) => this.handleChildLayout(index, event), style : [child.props.style, { 
                 position : 'absolute', 
                 left : centerX + (radius + (index == selectedIndex ? 5 : 0)) * Math.cos(2 * Math.PI * index/ arr.length) - childWidth/2,
                 top : centerY + (radius + (index == selectedIndex ? 5 : 0)) * Math.sin(2 * Math.PI * index/ arr.length) - childHeight/2,
                 width : childWidth,
                 height : childHeight,
-            }}
-            }));
+            }]
+            }}));
     // children.forEach(child => console.log(child.props.style.left));
     return <View style={this.props.style} onLayout={this.handleLayout}>
         {children}
